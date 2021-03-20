@@ -8,8 +8,8 @@ import { ListPeopleResourceService } from '../../../core/services/list-people-re
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
-   public detail = null;
-   
+  public detail = null;
+
   public constructor(
     private readonly _service: ListPeopleResourceService) { }
 
@@ -17,9 +17,9 @@ export class DetailComponent implements OnInit {
     this.getDetail();
   }
 
-  public getDetail() : void{
+  public getDetail(): void {
     this._service.detail(sessionStorage.getItem('getName')).subscribe(data => {
-       this.detail = data.results;
+      this.detail = data.results;
     })
     sessionStorage.clear();
   }
