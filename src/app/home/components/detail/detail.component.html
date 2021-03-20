@@ -1,0 +1,33 @@
+
+
+
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th colspan="2">
+              <h1 class="title-summary">Detail</h1>
+            </th>
+          </tr>
+        </thead>
+        <tbody *ngIf="detail">
+          <tr>
+            <td>Name</td>
+            <td class="price">{{detail[0].name}}</td>
+          </tr>
+          <tr>
+            <td>Height</td>
+            <td class="price"> {{detail[0].height}}</td>
+          </tr>
+          <tr>
+            <td>Mass</td>
+            <td class="price">{{detail[0].mass}}</td>
+          </tr>
+          <tr>
+            <td>Gender</td>
+            <td class="price">{{detail[0].gender}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+

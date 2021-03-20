@@ -1,0 +1,35 @@
+@import '../assets/styling/app.color.scss';
+
+nz-sider{
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    background-color:$primary-color-one;
+      .logo h1{
+           color: $primary-color-two; 
+      }
+      .logo{
+        margin: 37px;
+        width: 279px;
+        height: 80px;
+        font-size: 25px;
+      }
+}
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    cursor: pointer;
+    color: $primary-color-three;
+    font-size: 20px;
+}
+nz-content{
+  margin-left: 250px;
+  padding: 20px
+}
+
+nz-layout{
+  min-height: 100vh;
+}

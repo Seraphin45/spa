@@ -1,0 +1,42 @@
+<form nz-form [formGroup]="form" class="group-form">
+  <label for="">Number Of Pages</label>
+  <nz-select formControlName="getPageNumber" (ngModelChange)="pageNumberChange()">
+    <nz-option *ngFor="let page of pageNumber" [nzValue]="page" [nzLabel]="page"></nz-option>
+  </nz-select>
+</form>
+<div class="container">
+  <form nz-form [formGroup]="form">
+    <nz-form-item>
+      <nz-form-control>
+        <input type="text" formControlName="getSearch" class="search-input" placeholder="Search" />
+      </nz-form-control>
+    </nz-form-item>
+    <button class="btn-search" (click)='search()' nz-button [nzType]="'primary'">Search</button>
+  </form>
+  <nz-table #rowSelectionTable [nzScroll]="{ x: '920px' }" nzShowSizeChanger [nzData]="listOfData"
+  (nzCurrentPageDataChange)="onCurrentPageDataChange($event)">
+  <thead>
+    <tr>
+      <th [nzSelections]="listOfSelection" [(nzChecked)]="checked" [nzIndeterminate]="indeterminate"
+        (nzCheckedChange)="onAllChecked($event)"></th>
+      <th>Name</th>
+      <th>Height</th>
+      <th>Mass</th>
+      <th>Gender</th>
+      <th>Home World</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of rowSelectionTable.data">
+      <td [nzChecked]="setOfCheckedId.has(data.id)" (nzCheckedChange)="onItemChecked(data.id, $event)"></td>
+      <td>{{ data.name }}</td>
+      <td>{{ data.height }}</td>
+      <td>{{ data.mass }}</td>
+      <td>{{ data.gender }}</td>
+      <td>{{ data.homeworld }}</td>
+      <td> <button class="btn-view" nz-button (click)='view(data.name)' [nzType]="'primary'">View</button></td>
+    </tr>
+  </tbody>
+</nz-table>
+</div>

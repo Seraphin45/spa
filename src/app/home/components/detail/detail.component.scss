@@ -1,0 +1,18 @@
+@import '../../../../assets/styling/app.color.scss';
+@import '../../../../assets/styling/app.sizes.scss';
+
+.table{
+    width: 100%;
+}
+
+.container{
+    background-color: $primary-color-two;
+    padding-left: 20px !important;
+}
+
+@media (max-width: $phone-landscape-breakpoint) {
+    .container{
+        width: 314px;
+        margin-left: -222px;
+    }
+}
