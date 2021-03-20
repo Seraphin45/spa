@@ -53,6 +53,4 @@ export class ListPeopleResourceService {
       throw Error(error.error);
     }
   }
-
-
 }
